@@ -1,135 +1,126 @@
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #153677, #4e085f);
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-
-.todo-container {
-  border-radius: 30px;
-  width: 100%;
-  max-width: 600px;
-  background: #ffffff;
   padding: 20px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
+/* To-Do Container */
+.todo-container {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Heading */
+h1 {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Input and Button */
 .input-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 10px;
-  margin-bottom: 20px;
+  justify-content: space-between;
 }
 
 #input-box {
   flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
   font-size: 16px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.7);
+  transition: 0.3s ease;
 }
 
+#input-box:focus {
+  background: #fff;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+/* Button */
 button {
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #ff5722;
-  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff6f61;
+  color: white;
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 button:hover {
-  background-color: #000000;
+  background-color: #ff3b2f;
 }
 
+/* Task List */
 ul {
-  margin: 10px auto;
-  padding: 20px;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+  padding: 0;
   list-style: none;
 }
 
 ul li {
-  cursor: pointer;
   position: relative;
-  padding: 12px 8px;
-  background: #eee;
-  font-size: 18px;
-  transition: 0.2s;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
   margin-bottom: 10px;
-  user-select: none;
-}
-
-ul li.checked {
-  text-decoration: line-through;
-  color: gray;
-}
-
-h1 {
-  text-align: center;
-  margin: 20px auto;
-  color: #153677;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-li {
-  position: relative; 
-  padding: 12px 40px 12px 10px; 
-  background: #eee;
-  font-size: 15px;
-  border-radius: 20px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.delete-btn {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  border: none;
-  background: red;
-  color: white;
-  border-radius: 5px; 
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: background 0.3s ease, transform 0.2s;
 }
 
-
-.delete-btn:hover {
-  background: rgb(2, 2, 2);
-  transform: translateY(-50%) scale(1.1);
+ul li:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.02);
 }
 
+/* Completed Task */
+ul li.checked {
+  text-decoration: line-through;
+  color: gray;
+  background: rgba(0, 0, 0, 0.1);
+}
 
+/* Delete Button */
+.delete-btn {
+  border: none;
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
 
-
-
-
-
+.delete-btn:hover {
+  background: black;
+  transform: scale(1.1);
+}
